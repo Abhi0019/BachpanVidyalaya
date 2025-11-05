@@ -1,0 +1,6 @@
+# Allow all search engine bots to crawl the site
+User-agent: *
+Allow: /
+
+# Point bots to the XML Sitemap
+Sitemap: https://bachpan-vidyalaya.vercel.app/sitemap-index.xml
