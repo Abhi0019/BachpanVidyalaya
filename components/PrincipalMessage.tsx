@@ -34,7 +34,7 @@ export default function PrincipalMessage() {
   return (
     <section
       id="principal"
-      className="relative py-16 md:py-24 bg-gradient-to-b from-white to-[#f7fbff] overflow-hidden"
+      className="relative py-16 md:py-24 bg-linear-to-b from-white to-[#f7fbff] overflow-hidden"
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3 items-center">

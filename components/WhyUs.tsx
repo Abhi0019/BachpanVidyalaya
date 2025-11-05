@@ -37,8 +37,8 @@ export default function WhyUs() {
       className="relative py-16 md:py-24 bg-[linear-gradient(180deg,#f7fbff_0%,#eef7fb_100%)] overflow-hidden"
     >
       {/* Decorative blobs */}
-      <div className="absolute -left-28 -top-16 w-80 h-80 rounded-full bg-gradient-to-tr from-[#FFDDA8]/50 via-[#FFC947]/20 to-[#FF9AA3]/8 blur-3xl pointer-events-none"></div>
-      <div className="absolute -right-24 -bottom-12 w-64 h-64 rounded-full bg-gradient-to-bl from-[#6AD3FF]/16 to-[#63c2b5]/8 blur-2xl pointer-events-none"></div>
+      <div className="absolute -left-28 -top-16 w-80 h-80 rounded-full bg-linear-to-tr from-[#FFDDA8]/50 via-[#FFC947]/20 to-[#FF9AA3]/8 blur-3xl pointer-events-none"></div>
+      <div className="absolute -right-24 -bottom-12 w-64 h-64 rounded-full bg-linear-to-bl from-[#6AD3FF]/16 to-[#63c2b5]/8 blur-2xl pointer-events-none"></div>
       <div className="absolute left-1/2 top-6 -translate-x-1/2 w-[340px] h-[18px] bg-[linear-gradient(90deg,#FFF0D6,rgba(255,201,71,0.06),#E6FBFF)] blur-sm opacity-60 pointer-events-none"></div>
 
       <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
@@ -47,7 +47,7 @@ export default function WhyUs() {
           style={{ fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial" }}
         >
           <span className="block text-[#06304A]">Why</span>
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#FFC947] via-[#FF9A76] to-[#FF6B9B] text-4xl md:text-5xl">
+          <span className="block text-transparent bg-clip-text bg-linear-to-r from-[#FFC947] via-[#FF9A76] to-[#FF6B9B] text-4xl md:text-5xl">
             Bachpan Vidyalay?
           </span>
         </h2>

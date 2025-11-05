@@ -1,3 +1,6 @@
+"use client";
+import React, { ReactElement } from "react";
+
 export default function Programs() {
   return (
     <section id="academics" className="py-16 md:py-24 bg-white relative overflow-hidden">
@@ -51,7 +54,7 @@ export default function Programs() {
 }
 
 interface ProgramCardProps {
-  icon: JSX.Element;
+  icon: ReactElement;
   title: string;
   description: string;
   gradient: string;
@@ -61,7 +64,7 @@ function ProgramCard({ icon, title, description, gradient }: ProgramCardProps) {
   return (
     <article className="relative bg-white rounded-3xl p-10 shadow-xl transition-transform duration-500 hover:-translate-y-2 hover:scale-105">
       <div
-        className={`absolute -top-10 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-gradient-to-br ${gradient} flex items-center justify-center transition-transform duration-500 hover:rotate-6 hover:scale-110`}
+        className={`absolute -top-10 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full bg-linear-to-br ${gradient} flex items-center justify-center transition-transform duration-500 hover:rotate-6 hover:scale-110`}
       >
         {icon}
       </div>

@@ -6,18 +6,21 @@ export default function AboutUs() {
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) {
-      document.querySelectorAll("#about .reveal").forEach(el => el.classList.add("show"));
+      document.querySelectorAll("#about .reveal").forEach((el) => el.classList.add("show"));
       return;
     }
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add("show");
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll("#about .reveal").forEach(el => io.observe(el));
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("show");
+            obs.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll("#about .reveal").forEach((el) => io.observe(el));
     return () => io.disconnect();
   }, []);
 
@@ -30,9 +33,10 @@ export default function AboutUs() {
         href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet"
       />
+
       {/* Decorative Blobs */}
-      <div className="absolute -left-28 -top-20 w-96 h-96 rounded-full bg-gradient-to-tr from-[#FFDDA8] via-[#FFC947]/60 to-[#FF9AA3]/20 blur-3xl opacity-90 pointer-events-none" />
-      <div className="absolute -right-24 bottom-8 w-80 h-80 rounded-full bg-gradient-to-bl from-[#6AD3FF]/20 to-[#63c2b5]/6 blur-2xl opacity-80 pointer-events-none" />
+      <div className="absolute -left-28 -top-20 w-96 h-96 rounded-full bg-linear-to-tr from-[#FFDDA8] via-[#FFC947]/60 to-[#FF9AA3]/20 blur-3xl opacity-90 pointer-events-none" />
+      <div className="absolute -right-24 bottom-8 w-80 h-80 rounded-full bg-linear-to-bl from-[#6AD3FF]/20 to-[#63c2b5]/6 blur-2xl opacity-80 pointer-events-none" />
 
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-6xl mx-auto grid gap-10 md:grid-cols-2 items-center">
@@ -56,7 +60,7 @@ export default function AboutUs() {
             <div className="bg-white/70 backdrop-blur-md ring-1 ring-white/30 rounded-2xl p-8 md:p-12 shadow-[0_20px_50px_rgba(6,48,74,0.06)] reveal">
               <h2 className="font-[Jolly_Lodger] text-3xl sm:text-4xl md:text-5xl leading-normal mb-4">
                 <span className="block text-[#06304A]">Welcome to</span>
-                <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[#FFC947] via-[#FF9A76] to-[#FF6B9B]">
+                <span className="block bg-clip-text text-transparent bg-linear-to-r from-[#FFC947] via-[#FF9A76] to-[#FF6B9B]">
                   Bachpan Vidyalay
                 </span>
               </h2>
@@ -77,9 +81,7 @@ export default function AboutUs() {
               </div>
             </div>
 
-            <div className="mt-4 text-xs text-gray-400">
-              Located in Patan • LKG – Standard 8
-            </div>
+            <div className="mt-4 text-xs text-gray-400">Located in Patan • LKG – Standard 8</div>
           </div>
         </div>
       </div>

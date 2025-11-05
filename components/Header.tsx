@@ -28,7 +28,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="#" id="logo-link" className="flex items-center">
+          <Link href="/" id="logo-link" className="flex items-center">
             <Image
               src="/images/logopng.png"
               alt="logo"
@@ -76,9 +76,15 @@ export default function Header() {
               Campus
             </a>
 
+            {/* 🎯 Admissions Button — fixed hover behavior */}
             <a
               href="#contact"
-              className="admissions-btn bg-[#FFC947] text-black font-semibold px-5 py-2 rounded-full border-2 border-transparent transition shadow-sm hover:bg-transparent hover:border-[#FFC947] hover:text-white"
+              className={`admissions-btn font-semibold px-5 py-2 rounded-full border-2 transition-all duration-300 shadow-sm
+                ${
+                  scrolled
+                    ? "bg-[#FFC947] text-black border-transparent hover:bg-transparent hover:border-[#FFC947] hover:text-black"
+                    : "bg-[#FFC947] text-black border-transparent hover:bg-transparent hover:border-[#FFC947] hover:text-white"
+                }`}
             >
               Admissions
             </a>

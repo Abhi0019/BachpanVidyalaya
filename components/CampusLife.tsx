@@ -2,7 +2,7 @@ export default function CampusLife() {
   return (
     <section
       id="campus-life"
-      className="relative py-24 bg-gradient-to-b from-[#f7fbff] to-[#e6f2ff] overflow-hidden"
+      className="relative py-24 bg-linear-to-b from-[#f7fbff] to-[#e6f2ff] overflow-hidden"
     >
       {/* Floating Shapes */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-[#FFD9C0]/40 rounded-full filter blur-3xl animate-float-slow"></div>
@@ -15,8 +15,7 @@ export default function CampusLife() {
             Campus Life at Bachpan Vidyalay
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-lg md:text-xl">
-            A joyful, safe, and nurturing environment where every child learns,
-            plays, and explores their passions.
+            A joyful, safe, and nurturing environment where every child learns, plays, and explores their passions.
           </p>
         </div>
 
@@ -64,14 +63,10 @@ export default function CampusLife() {
               key={i}
               className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-500 overflow-hidden"
             >
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-72 object-cover object-center rounded-t-3xl"
-              />
+              <img src={item.img} alt={item.title} className="w-full h-72 object-cover object-center rounded-t-3xl" />
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#FFD86F]/20 flex items-center justify-center shadow-md">
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-[#FFD86F]/20 flex items-center justify-center shadow-md">
                     <img src={item.icon} alt={item.title} className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-bold text-[#06304A]">{item.title}</h3>

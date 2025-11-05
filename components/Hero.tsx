@@ -28,7 +28,7 @@ export default function Hero() {
       />
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(3,16,32,0.55)] via-[rgba(7,33,71,0.28)] to-[rgba(0,0,0,0.45)] animate-gradient-slow" />
+      <div className="absolute inset-0 bg-linear-to-t from-[rgba(3,16,32,0.55)] via-[rgba(7,33,71,0.28)] to-[rgba(0,0,0,0.45)] animate-gradient-slow" />
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm z-10" />
 
       {/* Floating shapes */}
@@ -39,7 +39,7 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="relative z-20 container mx-auto px-6 md:px-12 lg:px-20">
-        <h1 className="font-jolly-lodger text-5xl md:text-7xl leading-normal drop-shadow-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#FFD27A] via-[#FF9A76] to-[#FF6B9B]">
+        <h1 className="font-jolly-lodger text-5xl md:text-7xl leading-normal drop-shadow-2xl text-transparent bg-clip-text bg-linear-to-r from-[#FFD27A] via-[#FF9A76] to-[#FF6B9B]">
           Bachpan Vidyalay
         </h1>
         <p className="mt-4 text-lg md:text-xl text-gray-100/95 drop-shadow-md max-w-xl mx-auto">

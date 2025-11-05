@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-gradient-to-b from-[#ffffff] to-[#cbe4ff] py-24"
+      className="relative overflow-hidden bg-linear-to-b from-[#ffffff] to-[#cbe4ff] py-24"
     >
       {/* TOP WAVE */}
       <div
