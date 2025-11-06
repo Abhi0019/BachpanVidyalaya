@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="contact"
@@ -26,29 +29,18 @@ export default function Contact() {
       </div>
 
       {/* Floating Blobs */}
-      <div
-        className="absolute -left-24 -top-24 w-72 h-72 bg-[#FFD9C0]/30 rounded-full blur-3xl animate-blob-slow -z-10"
-        aria-hidden="true"
-      ></div>
-      <div
-        className="absolute -right-28 -bottom-24 w-96 h-96 bg-[#A0E7FF]/24 rounded-full blur-3xl animate-blob-slower -z-10"
-        aria-hidden="true"
-      ></div>
-      <div
-        className="absolute left-1/2 top-24 w-44 h-44 bg-[#FFEEAA]/20 rounded-full blur-2xl animate-blob-slow -z-10"
-        aria-hidden="true"
-      ></div>
+      <div className="absolute -left-24 -top-24 w-72 h-72 bg-[#FFD9C0]/30 rounded-full blur-3xl animate-blob-slow -z-10" aria-hidden="true"></div>
+      <div className="absolute -right-28 -bottom-24 w-96 h-96 bg-[#A0E7FF]/24 rounded-full blur-3xl animate-blob-slower -z-10" aria-hidden="true"></div>
+      <div className="absolute left-1/2 top-24 w-44 h-44 bg-[#FFEEAA]/20 rounded-full blur-2xl animate-blob-slow -z-10" aria-hidden="true"></div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-school-blue mb-3">
-            Admissions are open
+            {t("contact.admissionsOpen")}
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto text-base md:text-lg">
-            Ready to join the Bachpan Vidyalay family? Send us an enquiry and
-            our admissions team will help with next steps, tours and application
-            details.
+            {t("contact.description")}
           </p>
         </div>
 
@@ -58,49 +50,36 @@ export default function Contact() {
           <div className="space-y-6">
             <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
               <h3 className="text-xl font-semibold text-school-blue mb-3">
-                Contact details
+                {t("contact.detailsTitle")}
               </h3>
               <p className="text-gray-600 mb-4">
-                Prefer to call or visit? We're available during office hours and
-                happy to schedule Appointment.
+                {t("contact.detailsDescription")}
               </p>
 
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
-                  <img
-                    src="/images/location.png"
-                    alt=""
-                    className="w-5 h-5 mt-1"
-                  />
+                  <img src="/images/location.png" alt="" className="w-5 h-5 mt-1" />
                   <div>
-                    <div className="font-medium text-sm">Address</div>
+                    <div className="font-medium text-sm">{t("contact.address")}</div>
                     <div className="text-sm text-gray-600">
-                      Rajlaxmi Society, Patan, Gujarat 384266
+                      {t("contact.addressValue")}
                     </div>
                   </div>
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <img
-                    src="/images/telephone.png"
-                    alt=""
-                    className="w-5 h-5 mt-1"
-                  />
+                  <img src="/images/telephone.png" alt="" className="w-5 h-5 mt-1" />
                   <div>
-                    <div className="font-medium text-sm">Phone</div>
-                    <div className="text-sm text-gray-600">
-                      +91 12345 67890
-                    </div>
+                    <div className="font-medium text-sm">{t("contact.phone")}</div>
+                    <div className="text-sm text-gray-600">{t("contact.phoneValue")}</div>
                   </div>
                 </li>
 
                 <li className="flex items-start gap-3">
                   <img src="/images/email.png" alt="" className="w-5 h-5 mt-1" />
                   <div>
-                    <div className="font-medium text-sm">Email</div>
-                    <div className="text-sm text-gray-600">
-                      info@bachpanvidyalaya.com
-                    </div>
+                    <div className="font-medium text-sm">{t("contact.email")}</div>
+                    <div className="text-sm text-gray-600">{t("contact.emailValue")}</div>
                   </div>
                 </li>
               </ul>
@@ -108,12 +87,10 @@ export default function Contact() {
 
             <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
               <h4 className="text-lg font-semibold text-school-blue mb-2">
-                Office hours
+                {t("contact.officeHours")}
               </h4>
               <p className="text-gray-600 text-sm">
-                Mon – Fri: 9:00 AM – 3:30 PM
-                <br />
-                Sat: 9:00 AM – 1:00 PM
+                {t("contact.officeHoursValue")}
               </p>
             </div>
           </div>
@@ -125,14 +102,14 @@ export default function Contact() {
                 action="#"
                 method="POST"
                 className="space-y-4"
-                aria-label="Admission enquiry form"
+                aria-label={t("contact.formAriaLabel")}
               >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <input
                     id="parentName"
                     name="parentName"
                     type="text"
-                    placeholder="Parent's name"
+                    placeholder={t("contact.form.parentName")}
                     className="input-field"
                     required
                   />
@@ -140,7 +117,7 @@ export default function Contact() {
                     id="studentName"
                     name="studentName"
                     type="text"
-                    placeholder="Student's name"
+                    placeholder={t("contact.form.studentName")}
                     className="input-field"
                     required
                   />
@@ -150,7 +127,7 @@ export default function Contact() {
                   id="klass"
                   name="klass"
                   type="text"
-                  placeholder="Class applying for (e.g., LKG, 5th)"
+                  placeholder={t("contact.form.klass")}
                   className="input-field"
                   required
                 />
@@ -160,7 +137,7 @@ export default function Contact() {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="Email address"
+                    placeholder={t("contact.form.email")}
                     className="input-field"
                     required
                   />
@@ -168,7 +145,7 @@ export default function Contact() {
                     id="phone"
                     name="phone"
                     type="tel"
-                    placeholder="Phone number"
+                    placeholder={t("contact.form.phone")}
                     className="input-field"
                     required
                   />
@@ -178,16 +155,16 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={4}
-                  placeholder="Your message (questions, preferred Appointment date, etc.)"
+                  placeholder={t("contact.form.message")}
                   className="input-field"
                 ></textarea>
 
                 <div className="flex items-center gap-3">
                   <button type="submit" className="btn-primary">
-                    Submit enquiry
+                    {t("contact.form.submit")}
                   </button>
                   <button type="reset" className="btn-ghost">
-                    Reset
+                    {t("contact.form.reset")}
                   </button>
                 </div>
               </form>

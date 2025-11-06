@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function WhyUs() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -44,11 +47,14 @@ export default function WhyUs() {
       <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
         <h2
           className="text-3xl md:text-4xl font-extrabold mb-10"
-          style={{ fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial" }}
+          style={{
+            fontFamily:
+              "Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial",
+          }}
         >
-          <span className="block text-[#06304A]">Why</span>
+          <span className="block text-[#06304A]">{t("whyus.titleTop")}</span>
           <span className="block text-transparent bg-clip-text bg-linear-to-r from-[#FFC947] via-[#FF9A76] to-[#FF6B9B] text-4xl md:text-5xl">
-            Bachpan Vidyalay?
+            {t("whyus.titleBottom")}
           </span>
         </h2>
 
@@ -74,9 +80,11 @@ export default function WhyUs() {
               </svg>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-semibold text-[#06304A] mb-2">Experienced Teachers</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-[#06304A] mb-2">
+              {t("whyus.cards.0.title")}
+            </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Caring, trained educators who give each child the attention and encouragement they need to flourish.
+              {t("whyus.cards.0.desc")}
             </p>
           </article>
 
@@ -85,7 +93,12 @@ export default function WhyUs() {
             <div className="absolute -left-10 -bottom-8 w-36 h-36 rounded-full bg-[#6AD3FF]/10 blur-2xl pointer-events-none"></div>
 
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#E6FBFF] mx-auto mb-4 ring-1 ring-[#6AD3FF]/25">
-              <svg className="w-8 h-8 text-[#0b9ccf]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <svg
+                className="w-8 h-8 text-[#0b9ccf]"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
                 <path
                   d="M3 3v18h18"
                   stroke="currentColor"
@@ -103,9 +116,11 @@ export default function WhyUs() {
               </svg>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-semibold text-[#06304A] mb-2">Holistic Development</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-[#06304A] mb-2">
+              {t("whyus.cards.1.title")}
+            </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              A balanced programme of academics, arts & play that nurtures the whole child — head, heart and hands.
+              {t("whyus.cards.1.desc")}
             </p>
           </article>
 
@@ -114,7 +129,12 @@ export default function WhyUs() {
             <div className="absolute -right-12 -bottom-10 w-40 h-40 rounded-full bg-[#FFCCD5]/8 blur-2xl pointer-events-none"></div>
 
             <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#FFF1F4] mx-auto mb-4 ring-1 ring-[#FFCCD5]/22">
-              <svg className="w-8 h-8 text-[#ff6b9b]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <svg
+                className="w-8 h-8 text-[#ff6b9b]"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
                 <path
                   d="M12 2l7 4v6c0 5-3.58 9.77-7 10-3.42-.23-7-5-7-10V6l7-4z"
                   stroke="currentColor"
@@ -125,16 +145,16 @@ export default function WhyUs() {
               </svg>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-semibold text-[#06304A] mb-2">Safe & Secure Campus</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-[#06304A] mb-2">
+              {t("whyus.cards.2.title")}
+            </h3>
             <p className="text-gray-700 leading-relaxed mb-4">
-              A calm, secure environment and well-defined routines so parents feel reassured every day.
+              {t("whyus.cards.2.desc")}
             </p>
           </article>
         </div>
 
-        <div className="mt-10 text-sm text-gray-500">
-          Trusted by families in Patan • Nurturing learners from LKG to Standard 8
-        </div>
+        <div className="mt-10 text-sm text-gray-500">{t("whyus.footer")}</div>
       </div>
 
       <style jsx>{`

@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function AboutUs() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) {
@@ -46,7 +49,7 @@ export default function AboutUs() {
 
             <img
               src="/images/1.jpeg"
-              alt="Kids learning and playing at Bachpan Vidyalay"
+              alt={t("about.imageAlt")}
               loading="lazy"
               className="relative rounded-3xl shadow-2xl w-full h-[420px] sm:h-[480px] object-cover object-center transform transition-transform duration-600 hover:-translate-y-3"
             />
@@ -59,29 +62,25 @@ export default function AboutUs() {
           <div>
             <div className="bg-white/70 backdrop-blur-md ring-1 ring-white/30 rounded-2xl p-8 md:p-12 shadow-[0_20px_50px_rgba(6,48,74,0.06)] reveal">
               <h2 className="font-[Jolly_Lodger] text-3xl sm:text-4xl md:text-5xl leading-normal mb-4">
-                <span className="block text-[#06304A]">Welcome to</span>
+                <span className="block text-[#06304A]">{t("about.welcome")}</span>
                 <span className="block bg-clip-text text-transparent bg-linear-to-r from-[#FFC947] via-[#FF9A76] to-[#FF6B9B]">
-                  Bachpan Vidyalay
+                  {t("about.schoolName")}
                 </span>
               </h2>
-              <p className="text-gray-700 text-lg md:text-xl mb-4">
-                A warm place where early curiosity is welcomed, imaginations are celebrated, and every child feels seen.
-              </p>
-              <p className="text-gray-600 mb-6">
-                We blend playful exploration with caring guidance so little learners grow confident, kind, and excited about school.
-              </p>
+              <p className="text-gray-700 text-lg md:text-xl mb-4">{t("about.description1")}</p>
+              <p className="text-gray-600 mb-6">{t("about.description2")}</p>
 
               <div className="flex items-center gap-3">
                 <a
                   href="#contact"
                   className="inline-flex items-center gap-2 bg-[#FFC947] text-black font-semibold px-5 py-3 rounded-full shadow hover:scale-105 transition-transform focus:outline-none focus:ring-4 focus:ring-[#FFC947]/30"
                 >
-                  Contact Us
+                  {t("about.contactCTA")}
                 </a>
               </div>
             </div>
 
-            <div className="mt-4 text-xs text-gray-400">Located in Patan • LKG – Standard 8</div>
+            <div className="mt-4 text-xs text-gray-400">{t("about.footerNote")}</div>
           </div>
         </div>
       </div>

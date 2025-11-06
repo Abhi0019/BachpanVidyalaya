@@ -1,37 +1,41 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const images = [
-  { src: "/images/1.jpeg", category: "annual-day", alt: "Annual Day Performance" },
-  { src: "/images/2.jpeg", category: "sports", alt: "Race at Sports Meet" },
-  { src: "/images/3.jpeg", category: "science", alt: "Science Project" },
-  { src: "/images/4.jpeg", category: "activity", alt: "Classroom Activity" },
-  { src: "/images/1.jpeg", category: "sports", alt: "Winners on Podium" },
-  { src: "/images/2.jpeg", category: "annual-day", alt: "Group Dance" },
-  { src: "/images/3.jpeg", category: "activity", alt: "Reading Session" },
-  { src: "/images/4.jpeg", category: "science", alt: "Volcano Model" },
+  { src: "/images/1.jpeg", category: "annual-day", altKey: "gallery.alt.annualDay" },
+  { src: "/images/2.jpeg", category: "sports", altKey: "gallery.alt.race" },
+  { src: "/images/3.jpeg", category: "science", altKey: "gallery.alt.scienceProject" },
+  { src: "/images/4.jpeg", category: "activity", altKey: "gallery.alt.activity" },
+  { src: "/images/1.jpeg", category: "sports", altKey: "gallery.alt.winners" },
+  { src: "/images/2.jpeg", category: "annual-day", altKey: "gallery.alt.groupDance" },
+  { src: "/images/3.jpeg", category: "activity", altKey: "gallery.alt.reading" },
+  { src: "/images/4.jpeg", category: "science", altKey: "gallery.alt.volcano" },
 ];
 
 export default function Gallery() {
   const [filter, setFilter] = useState("all");
+  const { t } = useTranslation();
 
   const filteredImages =
     filter === "all" ? images : images.filter((img) => img.category === filter);
+
+  const categories = ["all", "annual-day", "sports", "science", "activity"];
 
   return (
     <section id="gallery" className="py-16 md:py-24 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-[#06304A] mb-4">
-          Glimpses of Our World
+          {t("gallery.title")}
         </h2>
         <p className="text-gray-600 mb-12 max-w-xl mx-auto">
-          Explore the vibrant moments that make our school a special place to learn and grow.
+          {t("gallery.description")}
         </p>
 
         {/* Filter Buttons */}
         <div className="flex justify-center gap-4 mb-10 flex-wrap">
-          {["all", "annual-day", "sports", "science", "activity"].map((cat) => (
+          {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
@@ -41,7 +45,7 @@ export default function Gallery() {
                   : "bg-white text-[#06304A] border border-[#06304A]/30 hover:bg-[#06304A]/10"
               }`}
             >
-              {cat === "all" ? "All" : cat.replace("-", " ").toUpperCase()}
+              {t(`gallery.categories.${cat}`)}
             </button>
           ))}
         </div>
@@ -55,7 +59,7 @@ export default function Gallery() {
             >
               <Image
                 src={img.src}
-                alt={img.alt}
+                alt={t(img.altKey)}
                 width={400}
                 height={300}
                 className="object-cover w-full h-full"

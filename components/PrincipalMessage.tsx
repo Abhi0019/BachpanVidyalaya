@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function PrincipalMessage() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const reveals = document.querySelectorAll("#principal .reveal");
@@ -46,7 +49,7 @@ export default function PrincipalMessage() {
             >
               <img
                 src="/images/1.jpeg"
-                alt="Principal Anjali Mehta, Bachpan Vidyalay"
+                alt={t("principal.alt")}
                 className="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover object-center block"
                 loading="lazy"
               />
@@ -57,17 +60,16 @@ export default function PrincipalMessage() {
           <div className="md:col-span-2">
             <div className="bg-white/75 backdrop-blur-md ring-1 ring-black/40 rounded-2xl p-6 md:p-10 shadow-[0_20px_50px_rgba(6,48,74,0.06)] reveal">
               <h3 className="text-2xl md:text-3xl font-semibold text-[#06304A] mb-3">
-                A Message from Our Principal
+                {t("principal.title")}
               </h3>
               <blockquote className="text-gray-700 italic text-lg md:text-xl leading-relaxed mb-4 pl-4 border-l-4 border-[#FFC947]/60">
-                “Welcome to the Bachpan Vidyalay family — where every child’s curiosity is welcomed,
-                their uniqueness celebrated, and learning is a joyful journey.”
+                {t("principal.message")}
               </blockquote>
 
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div>
-                  <p className="font-bold text-[#06304A] text-lg">Mrs. Anjali Mehta</p>
-                  <p className="text-sm text-gray-500">M.A., B.Ed. — Principal</p>
+                  <p className="font-bold text-[#06304A] text-lg">{t("principal.name")}</p>
+                  <p className="text-sm text-gray-500">{t("principal.qualification")}</p>
                 </div>
 
                 <div className="flex items-center gap-4">
@@ -93,13 +95,13 @@ export default function PrincipalMessage() {
                     href="#contact"
                     className="inline-flex items-center gap-2 bg-[#FFC947] text-black font-semibold px-4 py-2 rounded-full shadow hover:scale-105 transition-transform focus:ring-4 focus:ring-[#FFC947]/30"
                   >
-                    Meet the Principal
+                    {t("principal.cta")}
                   </a>
                 </div>
               </div>
             </div>
             <div className="mt-4 text-xs text-gray-400">
-              Committed to nurturing curious, confident learners.
+              {t("principal.commitment")}
             </div>
           </div>
         </div>

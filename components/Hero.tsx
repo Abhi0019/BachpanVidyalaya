@@ -1,7 +1,10 @@
 "use client";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   useEffect(() => {
     // pause ticker on hover
     const ticker = document.querySelector(".ticker-track");
@@ -40,10 +43,10 @@ export default function Hero() {
       {/* Main Content */}
       <div className="relative z-20 container mx-auto px-6 md:px-12 lg:px-20">
         <h1 className="font-jolly-lodger text-5xl md:text-7xl leading-normal drop-shadow-2xl text-transparent bg-clip-text bg-linear-to-r from-[#FFD27A] via-[#FF9A76] to-[#FF6B9B]">
-          Bachpan Vidyalay
+          {t("hero.title")}
         </h1>
         <p className="mt-4 text-lg md:text-xl text-gray-100/95 drop-shadow-md max-w-xl mx-auto">
-          Nurturing curious little minds in Patan — a joyful place where children play, learn, explore and grow together.
+          {t("hero.description")}
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -51,26 +54,26 @@ export default function Hero() {
             href="#contact"
             className="bg-[#FFC947] text-black font-semibold px-6 py-3 rounded-full text-lg shadow-xl transform transition-all hover:scale-105 focus:ring-4 focus:ring-[#FFC947]/40"
           >
-            Enquire Now
+            {t("hero.cta.enquire")}
           </a>
           <a
             href="#about"
             className="px-5 py-3 rounded-full border border-white/20 text-sm text-white/95 hover:bg-white/10 transition"
           >
-            Learn More
+            {t("hero.cta.learnMore")}
           </a>
         </div>
 
         {/* Highlights */}
         <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm">
           <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10">
-            <strong className="text-[#FFC947]">Admissions Open</strong> 2025–26
+            <strong className="text-[#FFC947]">{t("hero.highlights.admissions")}</strong> 2025–26
           </span>
           <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10">
-            Play-based learning
+            {t("hero.highlights.playBased")}
           </span>
           <span className="px-3 py-1 rounded-full bg-white/10 border border-white/10">
-            Safe campus • Experienced teachers
+            {t("hero.highlights.safeCampus")}
           </span>
         </div>
       </div>
@@ -91,18 +94,10 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 w-full z-30">
         <div className="bg-[rgba(6,30,60,0.85)] py-2 sm:py-3 overflow-hidden">
           <div className="ticker-track whitespace-nowrap animate-tickerMove text-lg sm:text-xl font-medium">
-            <span className="mx-8">
-              Admissions for the 2025–2026 session are now open — limited seats available.
-            </span>
-            <span className="mx-8">
-              Annual Sports Day on December 15 — Parents welcome.
-            </span>
-            <span className="mx-8">
-              New Montessori classes starting this year — Book a tour.
-            </span>
-            <span className="mx-8">
-              Small classroom sizes • Personalized attention.
-            </span>
+            <span className="mx-8">{t("hero.ticker.admissions")}</span>
+            <span className="mx-8">{t("hero.ticker.sportsDay")}</span>
+            <span className="mx-8">{t("hero.ticker.montessori")}</span>
+            <span className="mx-8">{t("hero.ticker.smallClasses")}</span>
           </div>
         </div>
       </div>

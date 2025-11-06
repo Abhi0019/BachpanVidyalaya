@@ -17,7 +17,7 @@ export default function HomePage() {
         <Hero />
         <AboutUs />
         <PrincipalMessage />
-        <WhyUs />
+        {/* <WhyUs /> */}
         <Programs />
         <CampusLife />
         <Testimonials />

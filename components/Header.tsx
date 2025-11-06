@@ -1,22 +1,33 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Menu } from "lucide-react";
+import { Menu, Globe } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import "../i18n"; // Import your i18n initialization
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
 
+  const { t, i18n } = useTranslation();
+
+  // Scroll behavior
   useEffect(() => {
-    // Sticky header on scroll
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Change language function
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    setLangOpen(false);
+  };
 
   return (
     <header
@@ -39,17 +50,14 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav
-            id="nav-links"
-            className="hidden md:flex items-center space-x-8 transition-colors duration-300"
-          >
+          <nav className="hidden md:flex items-center space-x-6">
             <a
               href="#"
               className={`nav-link ${
                 scrolled ? "text-gray-800" : "text-white"
               } hover:text-school-blue transition-colors duration-300`}
             >
-              Home
+              {t("header.home")}
             </a>
             <a
               href="#about"
@@ -57,7 +65,7 @@ export default function Header() {
                 scrolled ? "text-gray-800" : "text-white"
               } hover:text-school-blue transition-colors duration-300`}
             >
-              About Us
+              {t("header.about")}
             </a>
             <a
               href="#academics"
@@ -65,7 +73,7 @@ export default function Header() {
                 scrolled ? "text-gray-800" : "text-white"
               } hover:text-school-blue transition-colors duration-300`}
             >
-              Academics
+              {t("header.academics")}
             </a>
             <a
               href="#campus-life"
@@ -73,10 +81,10 @@ export default function Header() {
                 scrolled ? "text-gray-800" : "text-white"
               } hover:text-school-blue transition-colors duration-300`}
             >
-              Campus
+              {t("header.campus")}
             </a>
 
-            {/* 🎯 Admissions Button — fixed hover behavior */}
+            {/* Admissions Button */}
             <a
               href="#contact"
               className={`admissions-btn font-semibold px-5 py-2 rounded-full border-2 transition-all duration-300 shadow-sm
@@ -86,8 +94,42 @@ export default function Header() {
                     : "bg-[#FFC947] text-black border-transparent hover:bg-transparent hover:border-[#FFC947] hover:text-white"
                 }`}
             >
-              Admissions
+              {t("header.admissions")}
             </a>
+
+            {/* 🌐 Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded hover:bg-gray-200"
+              >
+                <Globe size={18} />
+                {i18n.language.toUpperCase()}
+              </button>
+
+              {langOpen && (
+                <div className="absolute right-0 mt-2 w-32 bg-white shadow-lg rounded-md overflow-hidden z-50">
+                  <button
+                    onClick={() => changeLanguage("en")}
+                    className="block w-full px-4 py-2 hover:bg-gray-100 text-left"
+                  >
+                    {t("header.language_english")}
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("hi")}
+                    className="block w-full px-4 py-2 hover:bg-gray-100 text-left"
+                  >
+                    {t("header.language_hindi")}
+                  </button>
+                  <button
+                    onClick={() => changeLanguage("gu")}
+                    className="block w-full px-4 py-2 hover:bg-gray-100 text-left"
+                  >
+                    {t("header.language_gujarati")}
+                  </button>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -111,31 +153,31 @@ export default function Header() {
             href="#"
             className="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-100"
           >
-            Home
+            {t("header.home")}
           </a>
           <a
             href="#about"
             className="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-100"
           >
-            About Us
+            {t("header.about")}
           </a>
           <a
             href="#academics"
             className="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-100"
           >
-            Academics
+            {t("header.academics")}
           </a>
           <a
             href="#campus-life"
             className="block py-3 px-4 text-sm text-gray-600 hover:bg-gray-100"
           >
-            Campus
+            {t("header.campus")}
           </a>
           <a
             href="#contact"
             className="block py-3 px-4 text-sm font-semibold text-school-blue bg-yellow-100 hover:bg-yellow-200"
           >
-            Admissions
+            {t("header.admissions")}
           </a>
         </div>
       )}

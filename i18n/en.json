@@ -1,0 +1,195 @@
+{
+  "header": {
+  "home": "Home",
+  "about": "About",
+  "academics": "Academics",
+  "campus": "Campus Life",
+  "admissions": "Admissions",
+  "language_english": "English",
+  "language_hindi": "हिन्दी",
+  "language_gujarati": "ગુજરાતી",
+  "join_button": "Join Bachpan Vidyalay"
+},
+  "hero": {
+    "title": "Bachpan Vidyalay",
+    "description": "Nurturing curious little minds in Patan — a joyful place where children play, learn, explore and grow together.",
+    "cta": {
+      "enquire": "Enquire Now",
+      "learnMore": "Learn More"
+    },
+    "highlights": {
+      "admissions": "Admissions Open",
+      "playBased": "Play-based learning",
+      "safeCampus": "Safe campus • Experienced teachers"
+    },
+    "ticker": {
+      "admissions": "Admissions for the 2025–2026 session are now open — limited seats available.",
+      "sportsDay": "Annual Sports Day on December 15 — Parents welcome.",
+      "montessori": "New Montessori classes starting this year — Book a tour.",
+      "smallClasses": "Small classroom sizes • Personalized attention."
+    }
+  },
+  "about": {
+    "imageAlt": "Kids learning and playing at Bachpan Vidyalay",
+    "welcome": "Welcome to",
+    "schoolName": "Bachpan Vidyalay",
+    "description1": "A warm place where early curiosity is welcomed, imaginations are celebrated, and every child feels seen.",
+    "description2": "We blend playful exploration with caring guidance so little learners grow confident, kind, and excited about school.",
+    "contactCTA": "Contact Us",
+    "footerNote": "Located in Patan • LKG – Standard 8"
+  },
+  "principal": {
+    "alt": "Principal Anjali Mehta, Bachpan Vidyalay",
+    "title": "A Message from Our Principal",
+    "message": "Welcome to the Bachpan Vidyalay family — where every child’s curiosity is welcomed, their uniqueness celebrated, and learning is a joyful journey.",
+    "name": "Mrs. Anjali Mehta",
+    "qualification": "M.A., B.Ed. — Principal",
+    "cta": "Meet the Principal",
+    "commitment": "Committed to nurturing curious, confident learners."
+  },
+  "campusLife": {
+    "title": "Campus Life at Bachpan Vidyalay",
+    "description": "A joyful, safe, and nurturing environment where every child learns, plays, and explores their passions.",
+    "activities": {
+      "sports": {
+        "title": "Sports & Fitness",
+        "desc": "Kids enjoy cricket, football, yoga, and fun relays, learning teamwork, coordination, and fitness habits early on."
+      },
+      "creativeArts": {
+        "title": "Creative Arts",
+        "desc": "Children explore painting, music, dance, and drama, enhancing creativity, confidence, and expression in a fun environment."
+      },
+      "stem": {
+        "title": "STEM & Science",
+        "desc": "Hands-on experiments, coding, and discovery-based learning spark curiosity and critical thinking in young minds."
+      },
+      "outdoor": {
+        "title": "Outdoor Exploration",
+        "desc": "Nature walks, gardening, and playground adventures help children connect with the environment and develop curiosity."
+      },
+      "reading": {
+        "title": "Reading & Literacy",
+        "desc": "Storytime, interactive reading, and language games cultivate literacy skills and a lifelong love for books."
+      },
+      "music": {
+        "title": "Music & Performance",
+        "desc": "Singing, rhythm, and performance activities help children build confidence, coordination, and joy in creative expression."
+      }
+    },
+    "programs": {
+      "title": "Our Academic Programs",
+      "prePrimary": {
+        "title": "Pre-Primary",
+        "desc": "(LKG & UKG) – Play-based learning to build foundational skills in a fun, creative setting."
+      },
+      "primary": {
+        "title": "Primary School",
+        "desc": "(Grades 1–5) – Building strong academic foundations with a focus on core subjects and exploration."
+      },
+      "middle": {
+        "title": "Middle School",
+        "desc": "(Grades 6–8) – Preparing students for future challenges with critical thinking and in-depth learning."
+      }
+    },
+    "gallery": {
+      "title": "Glimpses of Our World",
+      "description": "Explore the vibrant moments that make our school a special place to learn and grow.",
+      "categories": {
+        "all": "All",
+        "annual-day": "Annual Day",
+        "sports": "Sports",
+        "science": "Science",
+        "activity": "Activity"
+      },
+      "alt": {
+        "annualDay": "Annual Day Performance",
+        "race": "Race at Sports Meet",
+        "scienceProject": "Science Project",
+        "activity": "Classroom Activity",
+        "winners": "Winners on Podium",
+        "groupDance": "Group Dance",
+        "reading": "Reading Session",
+        "volcano": "Volcano Model"
+      }
+    }
+  },
+  "contact": {
+    "admissionsOpen": "Admissions are open",
+    "description": "Ready to join the Bachpan Vidyalay family? Send us an enquiry and our admissions team will help with next steps, tours and application details.",
+    "detailsTitle": "Contact details",
+    "detailsDescription": "Prefer to call or visit? We're available during office hours and happy to schedule Appointment.",
+    "address": "Address",
+    "addressValue": "Rajlaxmi Society, Patan, Gujarat 384266",
+    "phone": "Phone",
+    "phoneValue": "+91 12345 67890",
+    "email": "Email",
+    "emailValue": "info@bachpanvidyalaya.com",
+    "officeHours": "Office hours",
+    "officeHoursValue": "Mon – Fri: 9:00 AM – 3:30 PM\nSat: 9:00 AM – 1:00 PM",
+    "formAriaLabel": "Admission enquiry form",
+    "form": {
+      "parentName": "Parent's name",
+      "studentName": "Student's name",
+      "klass": "Class applying for (e.g., LKG, 5th)",
+      "email": "Email address",
+      "phone": "Phone number",
+      "message": "Your message (questions, preferred Appointment date, etc.)",
+      "submit": "Submit enquiry",
+      "reset": "Reset"
+    }
+  },
+  "cta": {
+    "title": "Join Bachpan Vidyalay Today!",
+    "description": "Give your child the foundation they deserve. Enroll now for a brighter future.",
+    "button": "Contact Us"
+  },
+  "whyus": {
+    "titleTop": "Why",
+    "titleBottom": "Bachpan Vidyalay?",
+    "cards": [
+      {
+        "title": "Experienced Teachers",
+        "desc": "Caring, trained educators who give each child the attention and encouragement they need to flourish."
+      },
+      {
+        "title": "Holistic Development",
+        "desc": "A balanced programme of academics, arts & play that nurtures the whole child — head, heart and hands."
+      },
+      {
+        "title": "Safe & Secure Campus",
+        "desc": "A calm, secure environment and well-defined routines so parents feel reassured every day."
+      }
+    ],
+    "footer": "Trusted by families in Patan • Nurturing learners from LKG to Standard 8"
+  },
+  "testimonials": {
+    "title": "What Parents Say",
+    "items": [
+      {
+        "text": "Bachpan Vidyalay has been a second home for my child. The teachers are incredibly supportive and the focus on overall development is amazing.",
+        "name": "Sunita Patel, Parent"
+      },
+      {
+        "text": "We are so happy we chose this school. The campus is safe, and the quality of education is top-notch. Highly recommended!",
+        "name": "Ramesh Sharma, Parent"
+      },
+      {
+        "text": "The school's events and activities are fantastic. It's wonderful to see my daughter so engaged and happy to go to school every day.",
+        "name": "Meena Desai, Parent"
+      }
+    ]
+  },
+  "footer": {
+    "schoolName": "Bachpan Vidyalay",
+    "tagline": "Fostering the future, one child at a time.",
+    "quickLinksTitle": "Quick Links",
+    "connectTitle": "Connect With Us",
+    "links": {
+      "home": "Home",
+      "about": "About Us",
+      "academics": "Academics",
+      "admissions": "Admissions"
+    },
+    "copyright": "© {{year}} Bachpan Vidyalay, Patan. All Rights Reserved."
+  }
+}

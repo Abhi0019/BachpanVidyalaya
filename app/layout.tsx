@@ -1,11 +1,12 @@
 // app/layout.tsx
+"use client";
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
+import "../i18n"; // <-- import i18n initialization
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins" });
-
-export const metadata = {
+ const metadata = {
   title: "Bachpan Vidyalay | School in Patan for LKG - Std 8",
   description:
     "Bachpan Vidyalay in Patan, Gujarat offers a safe, joyful learning environment with experienced teachers focused on holistic development. Admissions open!",
