@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import PrincipalMessage from "@/components/PrincipalMessage";
-import WhyUs from "@/components/WhyUs";
+// import WhyUs from "@/components/WhyUs";
 import Programs from "@/components/Programs";
 import CampusLife from "@/components/CampusLife";
 import Testimonials from "@/components/Testimonials";
