@@ -11,6 +11,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
 
   const { t, i18n } = useTranslation();
 
@@ -23,10 +24,11 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Change language function
+  // Change language
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setLangOpen(false);
+    setMobileLangOpen(false);
   };
 
   return (
@@ -179,6 +181,40 @@ export default function Header() {
           >
             {t("header.admissions")}
           </a>
+
+          {/* 🌐 Language Switcher for Mobile */}
+          <div className="border-t py-3 px-4">
+            <button
+              onClick={() => setMobileLangOpen(!mobileLangOpen)}
+              className="flex items-center gap-2 text-gray-700 font-medium"
+            >
+              <Globe size={18} />
+              {i18n.language.toUpperCase()}
+            </button>
+
+            {mobileLangOpen && (
+              <div className="mt-2 bg-gray-50 rounded-md shadow-inner">
+                <button
+                  onClick={() => changeLanguage("en")}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                >
+                  {t("header.language_english")}
+                </button>
+                <button
+                  onClick={() => changeLanguage("hi")}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                >
+                  {t("header.language_hindi")}
+                </button>
+                <button
+                  onClick={() => changeLanguage("gu")}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                >
+                  {t("header.language_gujarati")}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </header>
