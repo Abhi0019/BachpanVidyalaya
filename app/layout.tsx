@@ -1,6 +1,8 @@
 // app/layout.tsx
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
+// 1. Import your new component
+import SmoothScroller from "./../components/SmoothScroller";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const poppins = Poppins({
@@ -20,13 +22,6 @@ export const metadata = {
     url: "https://www.bachpanvidyalaypatan.com",
     siteName: "Bachpan Vidyalay",
     type: "website",
-    images: [
-      {
-        url: "/images/social-preview.jpg",
-        width: 1200,
-        height: 630,
-      },
-    ],
   },
   icons: {
     icon: "/images/logopng.png",
@@ -35,9 +30,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={`${inter.variable} ${poppins.variable} bg-white`}>
-        {children}
+        {/* 2. Use your new SmoothScroller component here */}
+        <SmoothScroller>
+          {children}
+        </SmoothScroller>
         <script src="https://unpkg.com/feather-icons" async></script>
       </body>
     </html>
