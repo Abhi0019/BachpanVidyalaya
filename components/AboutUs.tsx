@@ -34,10 +34,10 @@ export default function AboutUs() {
       ref={sectionRef} // Attach ref here
       className="relative py-16 md:py-24 bg-[linear-gradient(180deg,#fbfdff_0%,#f5f8fb_100%)] overflow-hidden"
     >
-      <link
+      {/* <link
         href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&family=Inter:wght@300;400;600;700&display=swap"
         rel="stylesheet"
-      />
+      /> */}
 
       {/* Decorative Blobs */}
       <div className="absolute -left-28 -top-20 w-96 h-96 rounded-full bg-linear-to-tr from-[#FFDDA8] via-[#FFC947]/60 to-[#FF9AA3]/20 blur-3xl opacity-90 pointer-events-none" />

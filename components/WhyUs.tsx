@@ -13,17 +13,17 @@ const gridVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.09, // Your original 90ms stagger
+      staggerChildren: 0.09, 
     },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 10 }, // Your original .reveal transform
+  hidden: { opacity: 0, y: 10 }, 
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.2, 0.9, 0.2, 1] as const }, // Your original cubic-bezier
+    transition: { duration: 0.6, ease: [0.2, 0.9, 0.2, 1] as const }, 
   },
 };
 
