@@ -5,6 +5,82 @@ import { useTranslation } from "react-i18next";
 
 export default function Contact() {
   const { t } = useTranslation();
+  const [formMessage, setFormMessage] = React.useState<{
+    type: "success" | "error" | "";
+    text: string;
+  }>({ type: "", text: "" });
+
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+
+  
+  const WEB_APP_URL = process.env.NEXT_PUBLIC_WEB_APP_URL as string;
+
+
+  // 👉 FORM SUBMIT HANDLER
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    // Disable button
+    setIsSubmitting(true);
+
+    // Clear previous message
+    setFormMessage({ type: "", text: "" });
+
+    // Validation
+    if (
+      !data.parentName ||
+      !data.studentName ||
+      !data.class ||
+      !data.email ||
+      !data.phone
+    ) {
+      setFormMessage({
+        type: "error",
+        text: t("contact.messages.required"),
+
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      await fetch(WEB_APP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(data as Record<string, string>).toString(),
+      });
+
+      setFormMessage({
+        type: "success",
+        text: t("contact.messages.success"),
+
+      });
+
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      setFormMessage({
+        type: "error",
+        text: t("contact.messages.error"),
+
+      });
+    }
+
+    // Re-enable button
+    setIsSubmitting(false);
+
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+      setFormMessage({ type: "", text: "" });
+    }, 5000);
+  };
 
   return (
     <section
@@ -29,9 +105,9 @@ export default function Contact() {
       </div>
 
       {/* Floating Blobs */}
-      <div className="absolute -left-24 -top-24 w-72 h-72 bg-[#FFD9C0]/30 rounded-full blur-3xl animate-blob-slow -z-10" aria-hidden="true"></div>
-      <div className="absolute -right-28 -bottom-24 w-96 h-96 bg-[#A0E7FF]/24 rounded-full blur-3xl animate-blob-slower -z-10" aria-hidden="true"></div>
-      <div className="absolute left-1/2 top-24 w-44 h-44 bg-[#FFEEAA]/20 rounded-full blur-2xl animate-blob-slow -z-10" aria-hidden="true"></div>
+      <div className="absolute -left-24 -top-24 w-72 h-72 bg-[#FFD9C0]/30 rounded-full blur-3xl animate-blob-slow -z-10" />
+      <div className="absolute -right-28 -bottom-24 w-96 h-96 bg-[#A0E7FF]/24 rounded-full blur-3xl animate-blob-slower -z-10" />
+      <div className="absolute left-1/2 top-24 w-44 h-44 bg-[#FFEEAA]/20 rounded-full blur-2xl animate-blob-slow -z-10" />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}
@@ -58,9 +134,11 @@ export default function Contact() {
 
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-3">
-                  <img src="/images/location.png" alt="" className="w-5 h-5 mt-1" />
+                  <img src="/images/location.png" alt="address" className="w-5 h-5 mt-1" />
                   <div>
-                    <div className="font-medium text-sm">{t("contact.address")}</div>
+                    <div className="font-medium text-sm">
+                      {t("contact.address")}
+                    </div>
                     <div className="text-sm text-gray-600">
                       {t("contact.addressValue")}
                     </div>
@@ -68,18 +146,26 @@ export default function Contact() {
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <img src="/images/telephone.png" alt="" className="w-5 h-5 mt-1" />
+                  <img src="/images/telephone.png" alt="phone" className="w-5 h-5 mt-1" />
                   <div>
-                    <div className="font-medium text-sm">{t("contact.phone")}</div>
-                    <div className="text-sm text-gray-600">{t("contact.phoneValue")}</div>
+                    <div className="font-medium text-sm">
+                      {t("contact.phone")}
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {t("contact.phoneValue")}
+                    </div>
                   </div>
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <img src="/images/email.png" alt="" className="w-5 h-5 mt-1" />
+                  <img src="/images/email.png" alt="email" className="w-5 h-5 mt-1" />
                   <div>
-                    <div className="font-medium text-sm">{t("contact.email")}</div>
-                    <div className="text-sm text-gray-600">{t("contact.emailValue")}</div>
+                    <div className="font-medium text-sm">
+                      {t("contact.email")}
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {t("contact.emailValue")}
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -98,12 +184,7 @@ export default function Contact() {
           {/* Right: Enquiry Form */}
           <div>
             <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
-              <form
-                action="#"
-                method="POST"
-                className="space-y-4"
-                aria-label={t("contact.formAriaLabel")}
-              >
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <input
                     id="parentName"
@@ -124,10 +205,10 @@ export default function Contact() {
                 </div>
 
                 <input
-                  id="klass"
-                  name="klass"
+                  id="class"
+                  name="class"
                   type="text"
-                  placeholder={t("contact.form.klass")}
+                  placeholder={t("contact.form.class")}
                   className="input-field"
                   required
                 />
@@ -160,13 +241,35 @@ export default function Contact() {
                 ></textarea>
 
                 <div className="flex items-center gap-3">
-                  <button type="submit" className="btn-primary">
-                    {t("contact.form.submit")}
+                  <button
+                    type="submit"
+                    className={`btn-primary flex items-center gap-2 ${
+                      isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+                    }`}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting && (
+                      <span className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    )}
+                    {isSubmitting ? t("contact.messages.submitting") : t("contact.form.submit")}
+
                   </button>
+
                   <button type="reset" className="btn-ghost">
                     {t("contact.form.reset")}
                   </button>
                 </div>
+                {formMessage.text && (
+                  <p
+                    className={`mt-3 text-sm transition-all duration-500 transform ${
+                      formMessage.type === "success"
+                        ? "text-green-600 opacity-100 translate-y-0"
+                        : "text-red-600 opacity-100 translate-y-0"
+                    }`}
+                  >
+                    {formMessage.text}
+                  </p>
+                )}
               </form>
             </div>
           </div>
@@ -255,32 +358,6 @@ export default function Contact() {
         }
         .animate-blob-slower {
           animation: blobSlower 9s ease-in-out infinite;
-        }
-
-        @media (max-width: 640px) {
-          .input-field {
-            font-size: 0.95rem;
-            padding: 0.75rem;
-          }
-          .btn-primary,
-          .btn-ghost {
-            width: auto;
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .animate-blob-slow,
-          .animate-blob-slower {
-            animation: none !important;
-            transform: none !important;
-          }
-          .input-field,
-          .btn-primary,
-          .btn-ghost {
-            transition: none !important;
-          }
         }
       `}</style>
     </section>

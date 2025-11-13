@@ -1,15 +1,15 @@
 {
   "header": {
-  "home": "Home",
-  "about": "About",
-  "academics": "Academics",
-  "campus": "Campus Life",
-  "admissions": "Admissions",
-  "language_english": "English",
-  "language_hindi": "हिन्दी",
-  "language_gujarati": "ગુજરાતી",
-  "join_button": "Join Bachpan Vidyalay"
-},
+    "home": "Home",
+    "about": "About",
+    "academics": "Academics",
+    "campus": "Campus Life",
+    "admissions": "Admissions",
+    "language_english": "English",
+    "language_hindi": "हिन्दी",
+    "language_gujarati": "ગુજરાતી",
+    "join_button": "Join Bachpan Vidyalay"
+  },
   "hero": {
     "title": "Bachpan Vidyalay",
     "description": "Nurturing curious little minds in Patan — a joyful place where children play, learn, explore and grow together.",
@@ -130,12 +130,18 @@
     "form": {
       "parentName": "Parent's name",
       "studentName": "Student's name",
-      "klass": "Class applying for (e.g., LKG, 5th)",
+      "class": "Class applying for (e.g., LKG, 5th)",
       "email": "Email address",
       "phone": "Phone number",
       "message": "Your message (questions, preferred Appointment date, etc.)",
       "submit": "Submit enquiry",
       "reset": "Reset"
+    },
+    "messages": {
+      "required": "Please fill all required fields.",
+      "success": "Your form has been submitted successfully!",
+      "error": "There was an error submitting your form. Please try again.",
+      "submitting": "Submitting..."
     }
   },
   "cta": {
